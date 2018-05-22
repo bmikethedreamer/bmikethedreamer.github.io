@@ -1,25 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "첫 글을 올리며"
 date:   2018-05-22 10:11:56 +0900
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+거의 3년 차가 되어가는 개발자입니다. 부끄럽게도 뭐하나 자신 있게 내세울 수 있는 기술이 아무것도 없습니다. 거울을 볼 때마다 한없이 부끄러운 저의 모습만 비추어져서 스스로 실망스럽기 그지없습니다. 
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+이제는 개발자로서 뭔가 해야 한다는 생각이 듭니다. 아무것도 안 하고 멍청하게 지낸 지 너무나 오래되었습니다. 그동안 겨울잠만 자던 개구리처럼 몸을 움츠리고 있기만 했습니다. 더이상 움츠려있기 싫네요.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+이 블로그를 통해서 남들에게 뭔가를 전하면서 스스로 잘난 척하고 싶지 않습니다. 그저 제가 알아야 했던 것들을 이곳에 적으며 스스로 반성하는 블로그가 되었으면 하는 바람입니다. 
