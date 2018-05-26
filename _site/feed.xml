@@ -4,11 +4,73 @@
     <title>멍청씨의 멍청한 블로그</title>
     <description>처음으로 도전하는 개발자 블로그입니다. 경력이 늘면 늘수록 부족함을 느껴 한번 진행해볼까합니다. 많은 응원부탁드립니다.
 </description>
-    <link>https://bmikethedreamer.github.io/</link>
-    <atom:link href="https://bmikethedreamer.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 May 2018 10:48:14 +0900</pubDate>
-    <lastBuildDate>Tue, 22 May 2018 10:48:14 +0900</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 26 May 2018 20:31:54 +0900</pubDate>
+    <lastBuildDate>Sat, 26 May 2018 20:31:54 +0900</lastBuildDate>
+    <generator>Jekyll v3.8.2</generator>
+    
+      <item>
+        <title>[리눅스] 자주 사용하는 TOP 커맨드</title>
+        <description>&lt;p&gt;현재 시스템의 성능을 알아보기 위해서 리눅스에서 자주 사용하는 명령어가 있습니다.&lt;/p&gt;
+
+&lt;p&gt;바로  &lt;strong&gt;top&lt;/strong&gt; 명령어인데요.&lt;/p&gt;
+
+&lt;p&gt;구글링  하시면 더 많은 정보를 얻을 수 있겠지만 전 길벗 출판사에서 나온 &lt;strong&gt;리눅스 서버를 다루는 기술&lt;/strong&gt; 이라는 책에서 나온 내용을 정리하여 블로그에 올리려 합니다.&lt;/p&gt;
+
+&lt;p&gt;top 명령어는 전체적인 프로세스의 상태를 알아볼 때 많이 사용하는 명령어입니다. 저희 회사에서도 저 윗 분은 제품의 성능을 알아보시기 위하여서 항상 top 명령어를 먼저 치시고 테스트를 하십니다.&lt;/p&gt;
+
+&lt;p&gt;실행 명령어는 아래와 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# top
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;명령어 출력은 아래와 같습니다.
+&lt;img src=&quot;http://cfile1.uf.tistory.com/image/996F8C335A55B9D92AA7AA&quot; alt=&quot;이미지출처:J. deo의 그알정보&quot; /&gt;
+&lt;a href=&quot;http://arer.tistory.com/92&quot;&gt;이미지출처 : J. deo의 그알정보&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;위 화면에서 유용한 명령어는 아래와 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;N : PID 순으로 정렬&lt;/li&gt;
+  &lt;li&gt;M : 메모리 사용 순으로 정렬&lt;/li&gt;
+  &lt;li&gt;T : 사용 시간에 따라 정렬&lt;/li&gt;
+  &lt;li&gt;P : CPU 점유율 순(기본 값) 정렬&lt;/li&gt;
+  &lt;li&gt;q : top 종료&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;top 명령어의 위 부분들은 시스템 상태를 요약해서 보여줍니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PID : 프로세스 ID&lt;/li&gt;
+  &lt;li&gt;USER : 프로세스 소유자&lt;/li&gt;
+  &lt;li&gt;PR : 프로세스의 우선순위&lt;/li&gt;
+  &lt;li&gt;NI : 우선 순위를 지정하는 nice 값&lt;/li&gt;
+  &lt;li&gt;VIRT : 프로세스가 점유하는 가상 메모리 양(KB 단위)&lt;/li&gt;
+  &lt;li&gt;RES : 스왑 되지 않은 물리 메모리 양(KB 단위)&lt;/li&gt;
+  &lt;li&gt;SHR : 공유 메모리 양(KB 단위)&lt;/li&gt;
+  &lt;li&gt;S : 프로세스 상태&lt;/li&gt;
+  &lt;li&gt;%CPU : CPU 점유율&lt;/li&gt;
+  &lt;li&gt;%MEM : 메모리 점유율&lt;/li&gt;
+  &lt;li&gt;TIME+ : 프로세스가 CPU를 사용한 시간&lt;/li&gt;
+  &lt;li&gt;COMMAND 는 프로세스를 실행한 명령&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+&lt;p&gt;리눅스 서버를 다루는 기술 p. 118&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 23 May 2018 22:11:56 +0900</pubDate>
+        <link>http://localhost:4000/jekyll/update/2018/05/23/top-command.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2018/05/23/top-command.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>첫 글을 올리며</title>
@@ -19,8 +81,8 @@
 &lt;p&gt;이 블로그를 통해서 남들에게 뭔가를 전하면서 스스로 잘난 척하고 싶지 않습니다. 그저 제가 알아야 했던 것들을 이곳에 적으며 스스로 반성하는 블로그가 되었으면 하는 바람입니다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 22 May 2018 10:11:56 +0900</pubDate>
-        <link>https://bmikethedreamer.github.io/jekyll/update/2018/05/22/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">https://bmikethedreamer.github.io/jekyll/update/2018/05/22/welcome-to-jekyll.html</guid>
+        <link>http://localhost:4000/jekyll/update/2018/05/22/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2018/05/22/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
