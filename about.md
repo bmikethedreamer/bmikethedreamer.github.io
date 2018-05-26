@@ -3,13 +3,11 @@ layout: page
 title: About
 permalink: /about/
 ---
+이름: 김동민  
+출생년도: 1986년
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+3년 반정도 게임 기획자로 지내다가 개발자로 직업을 변경하였습니다.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+이 블로그는 처음으로 도전하는 개발자 블로그입니다.  
+경력이 늘면 늘수록 부족함을 느껴 한번 진행해볼까합니다.  
+많은 응원부탁드립니다.
