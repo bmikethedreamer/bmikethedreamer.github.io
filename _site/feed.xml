@@ -6,9 +6,101 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 May 2018 20:42:01 +0900</pubDate>
-    <lastBuildDate>Sat, 26 May 2018 20:42:01 +0900</lastBuildDate>
+    <pubDate>Mon, 28 May 2018 21:56:33 +0900</pubDate>
+    <lastBuildDate>Mon, 28 May 2018 21:56:33 +0900</lastBuildDate>
     <generator>Jekyll v3.8.2</generator>
+    
+      <item>
+        <title>[리눅스] 패키지를 설치할 때는 dpkg</title>
+        <description>&lt;p&gt;오늘은 리눅스에서 apt-get-get을 사용하지 않고 파일을 설치하는 방법을 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;우분투는 확장자가 deb인 데비안 패키지를 사용합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기본-패키지-관리-명령-dpkg&quot;&gt;기본 패키지 관리 명령 dpkg&lt;/h2&gt;
+&lt;p&gt;우분투의 기본 패키지 관리 명령어는 dpkg 입니다. dpkg [옵션] [명령] 형식으로 입력합니다. 자주 사용하는 하위 명령어는 아래와 같습니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;-i: 패키지를 설치하거나 최신 버전으로 업그레이드&lt;/li&gt;
+  &lt;li&gt;-r: 설정 파일은 그대로 두고 패키지를 삭제&lt;/li&gt;
+  &lt;li&gt;-P: 패키지와 함께 설정 파일까지 모두 삭제&lt;/li&gt;
+  &lt;li&gt;-C: 패키지가 제대로 설치되었는지 확인&lt;/li&gt;
+  &lt;li&gt;-s: 패키지 상태 정보를 출력&lt;/li&gt;
+  &lt;li&gt;-L: 패키지에 들어 있는 파일과 경로 보여줌&lt;/li&gt;
+  &lt;li&gt;-l [패턴]: 패턴과 일치하는 패키지 보여줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;요즘 저는 엘라스틱 스택을 배우고 있기 때문에 관련 패키지 중 Elasticsearch의 패키지를 wget으로 다운로드 받아 dpkg로 설치해보도록 하겠습니다. (해당 부분은 점차 다루도록 하겠습니다.)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;참조: &lt;a href=&quot;https://www.elastic.co/kr/&quot;&gt;엘라스틱 스택&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;저는 elasticsearch의 6.2.2 버전을 다운로드 받아 설치하겠습니다. 먼저 아래의 명령어로 파일을 다운로드 받습니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.deb
+# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.deb.sha512
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;저는 저의 홈 디렉터리에 받았습니다. 이제 dpkg 명령어를 사용하여 설치하도록 하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sudo shasum -a 512 -c elasticsearch-6.2.2.deb.sha512
+# sudo dpkg -i elasticsearch-6.2.2.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;설치 자바 1.8 이상 버전이 깔려있어야 합니다.&lt;br /&gt;
+참조: &lt;a href=&quot;http://blog.dskim.xyz/devops/2017/04/18/devops-ubuntu16.04-jdk-1.8.html&quot;&gt;우분투 자바 설치 방법&lt;/a&gt;&lt;br /&gt;
+참조: &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/deb.html#deb&quot;&gt;Install Elasticsearch with Debian Package&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;실행 시키기 위하여 아래 명령어를 입력합니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sudo /bin/systemctl daemon-reload
+# sudo /bin/systemctl enable elasticsearch.service
+# sudo systemctl start elasticsearch.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;실제 elasticsearch가 실행되었는지 아래와 같은 명령어로 확인합니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# curl -X GET &quot;localhost:9200/&quot; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;아래와 같은 응답이 오면 성공적으로 패키지를 설치한 것입니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6JG1zJx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;cluster_name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;elasticsearch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;cluster_uuid&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qntrvDh3RGKfRo2DcdLInA&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6.2.2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build_hash&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10b1edd&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build_date&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2018-02-16T19:01:30.685723Z&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build_snapshot&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;lucene_version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;7.2.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;minimum_wire_compatibility_version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;5.6.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;minimum_index_compatibility_version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;5.0.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;tagline&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;You Know, for Search&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+&lt;p&gt;리눅스 서버를 다루는 기술 p. 124&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 May 2018 22:11:56 +0900</pubDate>
+        <link>http://localhost:4000/jekyll/update/2018/05/23/dpkg-command.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2018/05/23/dpkg-command.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>[리눅스] 자주 사용하는 TOP 커맨드</title>
