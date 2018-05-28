@@ -1,0 +1,48 @@
+<p>현재 시스템의 성능을 알아보기 위해서 리눅스에서 자주 사용하는 명령어가 있습니다.</p>
+
+<p>바로  <strong>top</strong> 명령어인데요.</p>
+
+<p>구글링  하시면 더 많은 정보를 얻을 수 있겠지만 전 길벗 출판사에서 나온 <strong>리눅스 서버를 다루는 기술</strong> 이라는 책에서 나온 내용을 정리하여 블로그에 올리려 합니다.</p>
+
+<p>top 명령어는 전체적인 프로세스의 상태를 알아볼 때 많이 사용하는 명령어입니다. 저희 회사에서도 저 윗 분은 제품의 성능을 알아보시기 위하여서 항상 top 명령어를 먼저 치시고 테스트를 하십니다.</p>
+
+<p>실행 명령어는 아래와 같습니다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># top
+</code></pre>
+</div>
+
+<p>명령어 출력은 아래와 같습니다.
+<img src="http://cfile1.uf.tistory.com/image/996F8C335A55B9D92AA7AA" alt="이미지출처:J. deo의 그알정보" />
+<a href="http://arer.tistory.com/92">이미지출처 : J. deo의 그알정보</a></p>
+
+<p>위 화면에서 유용한 명령어는 아래와 같습니다.</p>
+
+<ul>
+  <li>N : PID 순으로 정렬</li>
+  <li>M : 메모리 사용 순으로 정렬</li>
+  <li>T : 사용 시간에 따라 정렬</li>
+  <li>P : CPU 점유율 순(기본 값) 정렬</li>
+  <li>q : top 종료</li>
+</ul>
+
+<p>top 명령어의 위 부분들은 시스템 상태를 요약해서 보여줍니다.</p>
+
+<ul>
+  <li>PID : 프로세스 ID</li>
+  <li>USER : 프로세스 소유자</li>
+  <li>PR : 프로세스의 우선순위</li>
+  <li>NI : 우선 순위를 지정하는 nice 값</li>
+  <li>VIRT : 프로세스가 점유하는 가상 메모리 양(KB 단위)</li>
+  <li>RES : 스왑 되지 않은 물리 메모리 양(KB 단위)</li>
+  <li>SHR : 공유 메모리 양(KB 단위)</li>
+  <li>S : 프로세스 상태</li>
+  <li>%CPU : CPU 점유율</li>
+  <li>%MEM : 메모리 점유율</li>
+  <li>TIME+ : 프로세스가 CPU를 사용한 시간</li>
+  <li>COMMAND 는 프로세스를 실행한 명령</li>
+</ul>
+
+<h2 id="출처">출처</h2>
+<p>리눅스 서버를 다루는 기술 p. 118</p>
+

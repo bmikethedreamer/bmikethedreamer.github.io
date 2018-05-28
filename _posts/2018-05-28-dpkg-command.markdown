@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[리눅스] 패키지를 설치할 때는 dpkg"
-date:   2018-05-23 22:11:56 +0900
+date:   2018-05-28 22:04:56 +0900
 categories: jekyll update
 ---
 오늘은 리눅스에서 apt-get-get을 사용하지 않고 파일을 설치하는 방법을 알아보도록 하겠습니다.
