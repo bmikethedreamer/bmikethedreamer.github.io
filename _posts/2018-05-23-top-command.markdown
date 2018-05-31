@@ -2,7 +2,7 @@
 layout: post
 title:  "[리눅스] 자주 사용하는 TOP 커맨드"
 date:   2018-05-23 22:11:56 +0900
-categories: jekyll update
+tags: linux 
 ---
 현재 시스템의 성능을 알아보기 위해서 리눅스에서 자주 사용하는 명령어가 있습니다.
 

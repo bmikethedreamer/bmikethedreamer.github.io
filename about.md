@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 이름: 김동민  
 출생년도: 1986년

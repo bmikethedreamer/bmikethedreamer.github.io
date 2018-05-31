@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>멍청씨의 멍청한 블로그</title>
-    <description>처음으로 도전하는 개발자 블로그입니다. 경력이 늘면 늘수록 부족함을 느껴 한번 진행해볼까합니다. 많은 응원부탁드립니다.
-</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 May 2018 22:04:57 +0900</pubDate>
-    <lastBuildDate>Mon, 28 May 2018 22:04:57 +0900</lastBuildDate>
-    <generator>Jekyll v3.8.2</generator>
-    
-      <item>
-        <title>[리눅스] 패키지를 설치할 때는 dpkg</title>
-        <description>&lt;p&gt;오늘은 리눅스에서 apt-get-get을 사용하지 않고 파일을 설치하는 방법을 알아보도록 하겠습니다.&lt;/p&gt;
+	<channel>
+		<title>멍청씨의 멍청한 블로그</title>
+		<description>Software Developer</description>
+		<link>/jekyll-clean-dark</link>
+		<atom:link href="/jekyll-clean-dark/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>[리눅스] 패키지를 설치할 때는 dpkg</title>
+				<description>&lt;p&gt;오늘은 리눅스에서 apt-get-get을 사용하지 않고 파일을 설치하는 방법을 알아보도록 하겠습니다.&lt;/p&gt;
 
 &lt;p&gt;우분투는 확장자가 deb인 데비안 패키지를 사용합니다.&lt;/p&gt;
 
@@ -36,75 +32,64 @@
 
 &lt;p&gt;저는 elasticsearch의 6.2.2 버전을 다운로드 받아 설치하겠습니다. 먼저 아래의 명령어로 파일을 다운로드 받습니다.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.deb
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.deb
 # wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.deb.sha512
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;저는 저의 홈 디렉터리에 받았습니다. 이제 dpkg 명령어를 사용하여 설치하도록 하겠습니다.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sudo shasum -a 512 -c elasticsearch-6.2.2.deb.sha512
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sudo shasum -a 512 -c elasticsearch-6.2.2.deb.sha512
 # sudo dpkg -i elasticsearch-6.2.2.deb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;설치 자바 1.8 이상 버전이 깔려있어야 합니다.&lt;br /&gt;
-참조: &lt;a href=&quot;http://blog.dskim.xyz/devops/2017/04/18/devops-ubuntu16.04-jdk-1.8.html&quot;&gt;우분투 자바 설치 방법&lt;/a&gt;&lt;br /&gt;
+  &lt;p&gt;설치 자바 1.8 이상 버전이 깔려있어야 합니다.  &lt;br /&gt;
+참조: &lt;a href=&quot;http://blog.dskim.xyz/devops/2017/04/18/devops-ubuntu16.04-jdk-1.8.html&quot;&gt;우분투 자바 설치 방법&lt;/a&gt;  &lt;br /&gt;
 참조: &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/deb.html#deb&quot;&gt;Install Elasticsearch with Debian Package&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;실행 시키기 위하여 아래 명령어를 입력합니다.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sudo /bin/systemctl daemon-reload
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sudo /bin/systemctl daemon-reload
 # sudo /bin/systemctl enable elasticsearch.service
 # sudo systemctl start elasticsearch.service
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;실제 elasticsearch가 실행되었는지 아래와 같은 명령어로 확인합니다.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# curl -X GET &quot;localhost:9200/&quot; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# curl -X GET &quot;localhost:9200/&quot; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;아래와 같은 응답이 오면 성공적으로 패키지를 설치한 것입니다.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6JG1zJx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;cluster_name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;elasticsearch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;cluster_uuid&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;qntrvDh3RGKfRo2DcdLInA&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6.2.2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build_hash&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10b1edd&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build_date&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2018-02-16T19:01:30.685723Z&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build_snapshot&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;lucene_version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;7.2.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;minimum_wire_compatibility_version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;5.6.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-	    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;minimum_index_compatibility_version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;5.0.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;tagline&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;You Know, for Search&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;name&quot; : &quot;6JG1zJx&quot;,
+  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,
+  &quot;cluster_uuid&quot; : &quot;qntrvDh3RGKfRo2DcdLInA&quot;,
+  &quot;version&quot; : {
+	    &quot;number&quot; : &quot;6.2.2&quot;,
+	    &quot;build_hash&quot; : &quot;10b1edd&quot;,
+	    &quot;build_date&quot; : &quot;2018-02-16T19:01:30.685723Z&quot;,
+	    &quot;build_snapshot&quot; : false,
+	    &quot;lucene_version&quot; : &quot;7.2.1&quot;,
+	    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,
+	    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;
+  },
+  &quot;tagline&quot; : &quot;You Know, for Search&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
 &lt;p&gt;리눅스 서버를 다루는 기술 p. 124&lt;/p&gt;
 </description>
-        <pubDate>Mon, 28 May 2018 22:04:56 +0900</pubDate>
-        <link>http://localhost:4000/jekyll/update/2018/05/28/dpkg-command.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2018/05/28/dpkg-command.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>[리눅스] 자주 사용하는 TOP 커맨드</title>
-        <description>&lt;p&gt;현재 시스템의 성능을 알아보기 위해서 리눅스에서 자주 사용하는 명령어가 있습니다.&lt;/p&gt;
+				<pubDate>Mon, 28 May 2018 22:04:56 +0900</pubDate>
+				<link>/jekyll-clean-dark/2018/05/dpkg-command</link>
+				<guid isPermaLink="true">/jekyll-clean-dark/2018/05/dpkg-command</guid>
+			</item>
+		
+			<item>
+				<title>[리눅스] 자주 사용하는 TOP 커맨드</title>
+				<description>&lt;p&gt;현재 시스템의 성능을 알아보기 위해서 리눅스에서 자주 사용하는 명령어가 있습니다.&lt;/p&gt;
 
 &lt;p&gt;바로  &lt;strong&gt;top&lt;/strong&gt; 명령어인데요.&lt;/p&gt;
 
@@ -114,12 +99,11 @@
 
 &lt;p&gt;실행 명령어는 아래와 같습니다.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# top
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# top
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;명령어 출력은 아래와 같습니다.
-&lt;img src=&quot;http://cfile1.uf.tistory.com/image/996F8C335A55B9D92AA7AA&quot; alt=&quot;이미지출처:J. deo의 그알정보&quot; /&gt;
+&lt;p&gt;명령어 출력은 아래와 같습니다.&lt;br /&gt;
+&lt;img src=&quot;http://cfile1.uf.tistory.com/image/996F8C335A55B9D92AA7AA&quot; alt=&quot;이미지출처:J. deo의 그알정보&quot; /&gt;&lt;br /&gt;
 &lt;a href=&quot;http://arer.tistory.com/92&quot;&gt;이미지출처 : J. deo의 그알정보&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;위 화면에서 유용한 명령어는 아래와 같습니다.&lt;/p&gt;
@@ -153,35 +137,23 @@
 &lt;p&gt;리눅스 서버를 다루는 기술 p. 118&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 23 May 2018 22:11:56 +0900</pubDate>
-        <link>http://localhost:4000/jekyll/update/2018/05/23/top-command.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2018/05/23/top-command.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>첫 글을 올리며</title>
-        <description>&lt;p&gt;거의 3년 차가 되어가는 개발자입니다. 부끄럽게도 뭐하나 자신 있게 내세울 수 있는 기술이 아무것도 없습니다. 거울을 볼 때마다 한없이 부끄러운 저의 모습만 비추어져서 스스로 실망스럽기 그지없습니다.&lt;/p&gt;
+				<pubDate>Wed, 23 May 2018 22:11:56 +0900</pubDate>
+				<link>/jekyll-clean-dark/2018/05/top-command</link>
+				<guid isPermaLink="true">/jekyll-clean-dark/2018/05/top-command</guid>
+			</item>
+		
+			<item>
+				<title>첫 글을 올리며</title>
+				<description>&lt;p&gt;거의 3년 차가 되어가는 개발자입니다. 부끄럽게도 뭐하나 자신 있게 내세울 수 있는 기술이 아무것도 없습니다. 거울을 볼 때마다 한없이 부끄러운 저의 모습만 비추어져서 스스로 실망스럽기 그지없습니다.&lt;/p&gt;
 
 &lt;p&gt;이제는 개발자로서 뭔가 해야 한다는 생각이 듭니다. 아무것도 안 하고 멍청하게 지낸 지 너무나 오래되었습니다. 그동안 겨울잠만 자던 개구리처럼 몸을 움츠리고 있기만 했습니다. 더이상 움츠려있기 싫네요.&lt;/p&gt;
 
 &lt;p&gt;이 블로그를 통해서 남들에게 뭔가를 전하면서 스스로 잘난 척하고 싶지 않습니다. 그저 제가 알아야 했던 것들을 이곳에 적으며 스스로 반성하는 블로그가 되었으면 하는 바람입니다.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 22 May 2018 10:11:56 +0900</pubDate>
-        <link>http://localhost:4000/jekyll/update/2018/05/22/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2018/05/22/welcome-to-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-  </channel>
+				<pubDate>Tue, 22 May 2018 10:11:56 +0900</pubDate>
+				<link>/jekyll-clean-dark/2018/05/welcome-to-jekyll</link>
+				<guid isPermaLink="true">/jekyll-clean-dark/2018/05/welcome-to-jekyll</guid>
+			</item>
+		
+	</channel>
 </rss>
