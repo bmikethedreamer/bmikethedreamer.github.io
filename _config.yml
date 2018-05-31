@@ -8,7 +8,7 @@ url: http://bmikethedreamer.github.io
 #url: http://localhost:4000
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
-baseurl: '/jekyll-clean-dark'
+#baseurl: '/jekyll-clean-dark'
 
 author: dmkim
 copyright: 2018
@@ -50,5 +50,3 @@ kramdown:
   hard_wrap: true
 
 exclude: ['README.md', 'LICENSE']
-
-theme: jekyll-clean-dark

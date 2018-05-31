@@ -3,8 +3,8 @@
 	<channel>
 		<title>멍청씨의 멍청한 블로그</title>
 		<description>Software Developer</description>
-		<link>/jekyll-clean-dark</link>
-		<atom:link href="/jekyll-clean-dark/feed.xml" rel="self" type="application/rss+xml" />
+		<link></link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>[리눅스] 패키지를 설치할 때는 dpkg</title>
@@ -86,8 +86,8 @@
 &lt;p&gt;리눅스 서버를 다루는 기술 p. 124&lt;/p&gt;
 </description>
 				<pubDate>Mon, 28 May 2018 22:04:56 +0900</pubDate>
-				<link>/jekyll-clean-dark/2018/05/dpkg-command</link>
-				<guid isPermaLink="true">/jekyll-clean-dark/2018/05/dpkg-command</guid>
+				<link>/2018/05/dpkg-command</link>
+				<guid isPermaLink="true">/2018/05/dpkg-command</guid>
 			</item>
 		
 			<item>
@@ -142,8 +142,8 @@
 
 </description>
 				<pubDate>Wed, 23 May 2018 22:11:56 +0900</pubDate>
-				<link>/jekyll-clean-dark/2018/05/top-command</link>
-				<guid isPermaLink="true">/jekyll-clean-dark/2018/05/top-command</guid>
+				<link>/2018/05/top-command</link>
+				<guid isPermaLink="true">/2018/05/top-command</guid>
 			</item>
 		
 			<item>
@@ -155,8 +155,8 @@
 &lt;p&gt;이 블로그를 통해서 남들에게 뭔가를 전하면서 스스로 잘난 척하고 싶지 않습니다. 그저 제가 알아야 했던 것들을 이곳에 적으며 스스로 반성하는 블로그가 되었으면 하는 바람입니다.&lt;/p&gt;
 </description>
 				<pubDate>Tue, 22 May 2018 10:11:56 +0900</pubDate>
-				<link>/jekyll-clean-dark/2018/05/welcome-to-jekyll</link>
-				<guid isPermaLink="true">/jekyll-clean-dark/2018/05/welcome-to-jekyll</guid>
+				<link>/2018/05/welcome-to-jekyll</link>
+				<guid isPermaLink="true">/2018/05/welcome-to-jekyll</guid>
 			</item>
 		
 	</channel>
