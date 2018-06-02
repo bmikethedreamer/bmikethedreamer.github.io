@@ -1,43 +1,88 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-
 # Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+# plugins
+plugins: 
+- jekyll-paginate
+- jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# url is the full website URL
+# baseurl is the website's URL without the hostname
+# If you are hosting it on Github for some project with name 'projectname', then the url and baseurl should look like:
+url: "/jekyllBasicBlog"
+#baseurl: "/projectname"
+baseurl: "/jekyllBasicBlog"
+
+# Title of website
+title: 멍청씨의 멍청한 블로그
+
+#Default keywords (used if no keywords are specified on a page basis)
+#keywords: test1, test2, etc
+
+# Short description of your site
+desc: 개발자 블로그입니다.
+
+# --- Navigation bar options --- #
+
+# Image to show in the navigation bar - image must be a square (width = height)
+# Remove this parameter if you don't want an image in the navbar
+avatar: "/img/avatar.jpg"
+
+# List of links in the navigation bar
+nav-links:
+  Home: ""
+  About Me: "aboutme"
+  Archive: "archive"
+  
+# --- Footer options --- #
+
+# If the values are empty, they are ignored 
+profile:
+  name: 김동민
+  email: dmkim86@gmail.com
+  github: bmkimtherdreamer 
+
+# To display link in the footer section
+#pretty-url: "bchetty.com"
+
+# --- Misc --- #
+
+# Your Disqus profile (shortname) settings
+#disqus: "Your-Disqus-Id"
+
+# Google Analytics Settings
+#google_analytics: "Your-GA-Id"
+
+# Set these options as you need (For more information, check Jekyll's site)
+timezone: "Asia/Seoul"
+markdown: kramdown
+#highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /blog/:title
+paginate: 5
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true  # add comments to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "default"
+      show-avatar: true
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+#created-by: Babji, Chetty
+#creator-url: https://bchetty.com
