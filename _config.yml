@@ -7,9 +7,9 @@ plugins:
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 # If you are hosting it on Github for some project with name 'projectname', then the url and baseurl should look like:
-url: "/jekyllBasicBlog"
+url: ""
 #baseurl: "/projectname"
-baseurl: "/jekyllBasicBlog"
+baseurl: ""
 
 # Title of website
 title: 멍청씨의 멍청한 블로그
